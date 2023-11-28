@@ -8,18 +8,17 @@ const Login = () => {
 
   const login = async (data: any) => {
     try {
-      const response = await axios.post('auth/login', data, { withCredentials: true })
-      if (response.status === HttpStatusCode.Ok) {
+      const response = await axios.post('user/token', data, { withCredentials: true })
+      if (response.status === HttpStatusCode.Created) {
         const respData = response.data
-        axios.defaults.headers.common['Authorization'] = `Bearer ${respData['access_token']}`
+        axios.defaults.headers.common['Authorization'] = `Bearer ${respData['token']}`
         window.location.replace('/');
         toast.success('Successfully logged in', {position: toast.POSITION.BOTTOM_CENTER});
       } else {
-        if (response.request.response.includes('invalid email or password')) {
+        if (response.status === HttpStatusCode.Unauthorized) {
           toast.error('Invalid email or password, please try again', {position: toast.POSITION.BOTTOM_CENTER});
         }
       }
-
     } catch (err) {
       toast.error('Sorry, we\'re experiencing some technical difficulties. Please try again later.', {position: toast.POSITION.BOTTOM_CENTER});
     }

@@ -12,8 +12,8 @@ import {
 import Error from './pages/Error';
 import Home from './pages/Home';
 import Mainlayout from './components/layout/Main';
-// import Login from './pages/Login';
-// import Registration from './pages/Registration';
+import Registration from './pages/Registration';
+import Login from './pages/Login';
 
 
 const router = createBrowserRouter([
@@ -31,11 +31,11 @@ const router = createBrowserRouter([
         path: "register",
         element: <Registration />
       },
-      // {
-      //   index: true,
-      //   path: "login",
-      //   element: <Login />
-      // }
+      {
+        index: true,
+        path: "login",
+        element: <Login />
+      }
     ]
   },
 ]);
