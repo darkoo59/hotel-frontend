@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 code {
@@ -13,45 +12,9 @@ code {
     monospace;
 }
 
-html {
-  overflow: scroll;
-  overflow-x: hidden;
-}
-
-::-webkit-scrollbar {
-  width: 0;  
-  background: transparent; 
-}
-
-
-:root {
-  --primary-color: #1976d2;
-  --primary-light: #5DADE2;
-  --primary-dark: #1A120B;
-  --primary-text: #F6F1F1;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-}
-
-a.active .MuiListItem-root {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-.MuiCardHeader-title {
-  font-size: 2.5rem !important;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-gap: 20px;
-}
-
-.error-block {
-  font-size: 16px;
-  color: crimson;
+.center-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Makes the container take the full viewport height */
 }
