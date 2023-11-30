@@ -25,6 +25,7 @@ import {
   import { useContext } from "react";
   import { UserContext, UserContextValue } from "../../context/UserContext";
   import PeopleIcon from '@mui/icons-material/People';
+  import AccountBoxIcon from '@mui/icons-material/AccountBox';
   
   const drawerWidth = 250;
   
@@ -60,6 +61,13 @@ import {
       route: "/reservations",
       requireAuth: true,
       roles: ["ROLE_HOST"]
+    },
+    {
+      text: "Profile",
+      icon: <AccountBoxIcon />,
+      route: "/profile",
+      requireAuth: true,
+      roles: ["ROLE_HOST", "ROLE_GUEST"]
     }
   ];
   
